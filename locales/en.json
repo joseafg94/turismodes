@@ -15,6 +15,11 @@
     "admin": "Admin",
     "settings": "Settings"
   },
+  "map": {
+    "ariaLabel": "SafeRoute zone map",
+    "loading": "Loading zones…",
+    "loadError": "Zones could not be loaded."
+  },
   "routes": {
     "map": {
       "title": "Map",

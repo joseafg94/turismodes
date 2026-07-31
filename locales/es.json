@@ -15,6 +15,11 @@
     "admin": "Administración",
     "settings": "Configuración"
   },
+  "map": {
+    "ariaLabel": "Mapa de zonas de SafeRoute",
+    "loading": "Cargando zonas…",
+    "loadError": "No se pudieron cargar las zonas."
+  },
   "routes": {
     "map": {
       "title": "Mapa",
