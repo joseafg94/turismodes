@@ -1,7 +1,52 @@
 {
   "home": {
-    "title": "Explore with more context",
-    "description": "Check recent information and public sources before visiting an area.",
+    "tagline": "Explore tourist areas and places with recent information and local context.",
     "cta": "Get started"
+  },
+  "navigation": {
+    "ariaLabel": "Main navigation",
+    "home": "Home",
+    "map": "Map",
+    "zone": "Zone",
+    "place": "Place",
+    "nearby": "Near me",
+    "search": "Search",
+    "report": "Report",
+    "admin": "Admin",
+    "settings": "Settings"
+  },
+  "routes": {
+    "map": {
+      "title": "Map",
+      "description": "The interactive map will appear here."
+    },
+    "zone": {
+      "title": "Zone details",
+      "description": "Information about the selected zone will appear here."
+    },
+    "place": {
+      "title": "Place details",
+      "description": "Information about the selected place will appear here."
+    },
+    "nearby": {
+      "title": "Near me",
+      "description": "Places near your location will appear here."
+    },
+    "search": {
+      "title": "Search",
+      "description": "You will be able to search for zones and places here."
+    },
+    "report": {
+      "title": "Report",
+      "description": "You will be able to share a report about a zone here."
+    },
+    "admin": {
+      "title": "Admin",
+      "description": "Administration tools will appear here."
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "You will be able to adjust your preferences here."
+    }
   }
 }

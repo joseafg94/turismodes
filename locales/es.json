@@ -1,7 +1,52 @@
 {
   "home": {
-    "title": "Explora con más contexto",
-    "description": "Consulta información reciente y fuentes públicas antes de recorrer una zona.",
+    "tagline": "Explora zonas y lugares turísticos con información reciente y contexto local.",
     "cta": "Comenzar"
+  },
+  "navigation": {
+    "ariaLabel": "Navegación principal",
+    "home": "Inicio",
+    "map": "Mapa",
+    "zone": "Zona",
+    "place": "Lugar",
+    "nearby": "Cerca de mí",
+    "search": "Buscar",
+    "report": "Reportar",
+    "admin": "Administración",
+    "settings": "Configuración"
+  },
+  "routes": {
+    "map": {
+      "title": "Mapa",
+      "description": "Aquí se mostrará el mapa interactivo."
+    },
+    "zone": {
+      "title": "Detalle de zona",
+      "description": "Aquí se mostrará la información de la zona seleccionada."
+    },
+    "place": {
+      "title": "Detalle de lugar",
+      "description": "Aquí se mostrará la información del lugar seleccionado."
+    },
+    "nearby": {
+      "title": "Cerca de mí",
+      "description": "Aquí se mostrarán los lugares próximos a tu ubicación."
+    },
+    "search": {
+      "title": "Buscar",
+      "description": "Aquí podrás buscar zonas y lugares."
+    },
+    "report": {
+      "title": "Reportar",
+      "description": "Aquí podrás compartir un reporte sobre una zona."
+    },
+    "admin": {
+      "title": "Administración",
+      "description": "Aquí estarán las herramientas de administración."
+    },
+    "settings": {
+      "title": "Configuración",
+      "description": "Aquí podrás ajustar tus preferencias."
+    }
   }
 }
