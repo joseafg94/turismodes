@@ -20,6 +20,23 @@
     "loading": "Cargando zonas…",
     "loadError": "No se pudieron cargar las zonas."
   },
+  "zoneDetail": {
+    "loading": "Cargando información de la zona…",
+    "levelLabel": "Nivel de precaución",
+    "sourcesLabel": "Fuentes del dato",
+    "updatedLabel": "Última actualización",
+    "sourceFallback": "Fuente pública",
+    "noSources": "No hay fuentes publicadas para esta zona.",
+    "noUpdateDate": "Sin fecha de actualización",
+    "loadError": "No se pudo cargar esta zona.",
+    "guidance": "Esta información es orientativa — el criterio personal siempre prevalece.",
+    "levels": {
+      "low": "Sin reportes de incidentes recientes en esta área",
+      "medium": "Reportes recientes indican precaución en esta área",
+      "high": "Área de atención elevada según fuentes públicas",
+      "unknown": "Sin datos recientes"
+    }
+  },
   "routes": {
     "map": {
       "title": "Mapa",
