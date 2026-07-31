@@ -10,19 +10,7 @@ import {
   type ZoneRiskLevel,
 } from "@/components/ZoneLayer";
 
-const CASCO_VIEJO_CENTER: [number, number] = [-79.5169, 8.9537];
-const EMPTY_STYLE: StyleSpecification = {
-  version: 8,
-  sources: {},
-  layers: [
-    {
-      id: "background",
-      type: "background",
-      paint: { "background-color": "#E2E8F0" },
-    },
-  ],
-};
-
+const CASCO_VIEJO_CENTER: [number, number] = [-79.5348, 8.9533];
 type MapLabels = {
   ariaLabel: string;
   loadError: string;
@@ -113,54 +101,89 @@ export default function Map({ labels }: MapProps) {
 
   useEffect(() => {
     const style = process.env.NEXT_PUBLIC_MAP_STYLE_URL;
+    let currentMap: maplibregl.Map | undefined;
+    let cancelled = false;
 
     if (!mapContainerRef.current || !style) {
       setStatus("error");
       return;
     }
+    const styleUrl = style;
 
-    const currentMap = new maplibregl.Map({
-      container: mapContainerRef.current,
-      style: EMPTY_STYLE,
-      center: CASCO_VIEJO_CENTER,
-      zoom: 15,
-      pitch: 0,
-      maxPitch: 0,
-      bearing: 0,
-      dragRotate: false,
-      touchPitch: false,
-      pitchWithRotate: false,
-    });
+    async function initializeMap() {
+      try {
+        const response = await fetch(styleUrl);
 
-    currentMap.touchZoomRotate.disableRotation();
-    currentMap.setStyle(style, {
-      transformStyle: (_previousStyle, nextStyle) => flattenStyle(nextStyle),
-    });
+        if (!response.ok) {
+          throw new Error();
+        }
 
-    currentMap.once("load", () => {
-      currentMap.setBearing(0);
-      currentMap.setPitch(0);
-      currentMap.setTerrain(null);
-      setMap(currentMap);
-      void loadZones(currentMap);
-    });
-    currentMap.on("moveend", () => void loadZones(currentMap));
+        const styleSpecification =
+          (await response.json()) as StyleSpecification;
 
-    navigator.geolocation?.getCurrentPosition(
-      ({ coords }) => {
-        userMarkerRef.current?.remove();
-        userMarkerRef.current = new maplibregl.Marker({ color: "#2563EB" })
-          .setLngLat([coords.longitude, coords.latitude])
-          .addTo(currentMap);
-      },
-      () => undefined,
-      { enableHighAccuracy: true, maximumAge: 30_000, timeout: 10_000 },
-    );
+        if (cancelled || !mapContainerRef.current) {
+          return;
+        }
+
+        currentMap = new maplibregl.Map({
+          container: mapContainerRef.current,
+          style: flattenStyle(styleSpecification),
+          center: CASCO_VIEJO_CENTER,
+          zoom: 14,
+          pitch: 0,
+          maxPitch: 0,
+          bearing: 0,
+          dragRotate: false,
+          touchPitch: false,
+          pitchWithRotate: false,
+        });
+
+        currentMap.touchZoomRotate.disableRotation();
+        currentMap.once("load", () => {
+          if (!currentMap) {
+            return;
+          }
+
+          currentMap.setBearing(0);
+          currentMap.setPitch(0);
+          currentMap.setTerrain(null);
+          setMap(currentMap);
+          void loadZones(currentMap);
+        });
+        currentMap.on("moveend", () => {
+          if (currentMap) {
+            void loadZones(currentMap);
+          }
+        });
+
+        navigator.geolocation?.getCurrentPosition(
+          ({ coords }) => {
+            if (!currentMap) {
+              return;
+            }
+
+            userMarkerRef.current?.remove();
+            userMarkerRef.current = new maplibregl.Marker({
+              color: "#2563EB",
+            })
+              .setLngLat([coords.longitude, coords.latitude])
+              .addTo(currentMap);
+          },
+          () => undefined,
+          { enableHighAccuracy: true, maximumAge: 30_000, timeout: 10_000 },
+        );
+      } catch {
+        setStatus("error");
+      }
+    }
+
+    void initializeMap();
 
     return () => {
+      cancelled = true;
       requestIdRef.current += 1;
       userMarkerRef.current?.remove();
-      currentMap.remove();
+      currentMap?.remove();
     };
   }, [loadZones]);
 
@@ -175,7 +198,7 @@ export default function Map({ labels }: MapProps) {
       <ZoneLayer map={map} onZoneSelect={openZone} zones={zones} />
       {status !== "ready" && (
         <div
-          className="pointer-events-none absolute left-4 top-4 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
+          className="pointer-events-none absolute bottom-4 left-4 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm"
           role="status"
         >
           {status === "loading" ? labels.loading : labels.loadError}
