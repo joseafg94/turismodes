@@ -240,12 +240,7 @@ export default function AdminPanel() {
   const loadData = useCallback(async () => {
     setStatus("loading");
     const [zonesResult, placesResult, incidentsResult] = await Promise.all([
-      supabase
-        .from("zones")
-        .select(
-          "id,name_es,name_en,description_es,description_en,risk_level,geometry",
-        )
-        .order("name_es"),
+      supabase.rpc("admin_zones"),
       supabase
         .from("places")
         .select("id,name,category")
