@@ -37,6 +37,46 @@
       "unknown": "Sin datos recientes"
     }
   },
+  "nearby": {
+    "title": "Cerca de mí",
+    "description": "Lugares ubicados a menos de 500 metros de tu posición.",
+    "loading": "Buscando lugares cercanos…",
+    "locationError": "No pudimos obtener tu ubicación. Revisa el permiso de ubicación e inténtalo nuevamente.",
+    "retry": "Intentar de nuevo",
+    "empty": "No encontramos lugares dentro de 500 metros.",
+    "meters": "m",
+    "hoursLabel": "Horario",
+    "hoursUnavailable": "Horario no disponible",
+    "ratingLabel": "Calificación",
+    "ratingUnavailable": "Sin calificación",
+    "categoryUnknown": "Lugar",
+    "categories": {
+      "attraction": "Atracción",
+      "hotel": "Hotel",
+      "restaurant": "Restaurante",
+      "pharmacy": "Farmacia",
+      "hospital": "Hospital",
+      "police": "Policía"
+    }
+  },
+  "search": {
+    "title": "Buscar",
+    "description": "Encuentra zonas y lugares por nombre.",
+    "label": "Nombre de la zona o lugar",
+    "placeholder": "Ej. Casco Viejo",
+    "submit": "Buscar",
+    "loading": "Buscando resultados…",
+    "error": "No pudimos completar la búsqueda.",
+    "empty": "No encontramos resultados para esta búsqueda.",
+    "paginationLabel": "Páginas de resultados",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "pageLabel": "Página",
+    "types": {
+      "zone": "Zona",
+      "place": "Lugar"
+    }
+  },
   "routes": {
     "map": {
       "title": "Mapa",

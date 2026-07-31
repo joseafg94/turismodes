@@ -37,6 +37,46 @@
       "unknown": "No recent data"
     }
   },
+  "nearby": {
+    "title": "Near me",
+    "description": "Places located within 500 meters of your position.",
+    "loading": "Finding nearby places…",
+    "locationError": "Your location could not be obtained. Check location permission and try again.",
+    "retry": "Try again",
+    "empty": "No places were found within 500 meters.",
+    "meters": "m",
+    "hoursLabel": "Hours",
+    "hoursUnavailable": "Hours unavailable",
+    "ratingLabel": "Rating",
+    "ratingUnavailable": "No rating",
+    "categoryUnknown": "Place",
+    "categories": {
+      "attraction": "Attraction",
+      "hotel": "Hotel",
+      "restaurant": "Restaurant",
+      "pharmacy": "Pharmacy",
+      "hospital": "Hospital",
+      "police": "Police"
+    }
+  },
+  "search": {
+    "title": "Search",
+    "description": "Find areas and places by name.",
+    "label": "Area or place name",
+    "placeholder": "E.g. Old Town",
+    "submit": "Search",
+    "loading": "Searching…",
+    "error": "The search could not be completed.",
+    "empty": "No results were found for this search.",
+    "paginationLabel": "Result pages",
+    "previous": "Previous",
+    "next": "Next",
+    "pageLabel": "Page",
+    "types": {
+      "zone": "Area",
+      "place": "Place"
+    }
+  },
   "routes": {
     "map": {
       "title": "Map",
