@@ -113,7 +113,10 @@
     "password": "Password",
     "registerSubmit": "Create account",
     "loginSubmit": "Sign in",
+    "authSubmitting": "Processing...",
     "authError": "Authentication could not be completed.",
+    "authRateLimit": "Supabase temporarily reached its email limit. Wait a few minutes before trying again.",
+    "authInvalidEmail": "Enter a valid email address.",
     "confirmEmail": "Check your email to confirm the account, then sign in."
   },
   "admin": {

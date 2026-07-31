@@ -34,6 +34,7 @@ export default function IncidentForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [authMessage, setAuthMessage] = useState("");
+  const [authSubmitting, setAuthSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -79,6 +80,7 @@ export default function IncidentForm() {
   async function authenticate(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAuthMessage("");
+    setAuthSubmitting(true);
 
     if (authMode === "register") {
       const { data, error } = await supabase.auth.signUp({
@@ -93,12 +95,20 @@ export default function IncidentForm() {
       });
 
       if (error) {
-        setAuthMessage(t.report.authError);
+        setAuthMessage(
+          error.status === 429 || error.code === "over_email_send_rate_limit"
+            ? t.report.authRateLimit
+            : error.code === "email_address_invalid"
+              ? t.report.authInvalidEmail
+              : t.report.authError,
+        );
+        setAuthSubmitting(false);
         return;
       }
 
       if (!data.session) {
         setAuthMessage(t.report.confirmEmail);
+        setAuthSubmitting(false);
         return;
       }
 
@@ -111,6 +121,7 @@ export default function IncidentForm() {
 
       if (error) {
         setAuthMessage(t.report.authError);
+        setAuthSubmitting(false);
         return;
       }
 
@@ -119,6 +130,7 @@ export default function IncidentForm() {
 
     setAuthRequired(false);
     setAuthMessage("");
+    setAuthSubmitting(false);
   }
 
   async function submitIncident(event: FormEvent<HTMLFormElement>) {
@@ -316,12 +328,15 @@ export default function IncidentForm() {
               />
             </label>
             <button
-              className="min-h-12 rounded-xl bg-primary px-5 font-semibold text-white"
+              className="min-h-12 rounded-xl bg-primary px-5 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-60"
+              disabled={authSubmitting}
               type="submit"
             >
-              {authMode === "register"
-                ? t.report.registerSubmit
-                : t.report.loginSubmit}
+              {authSubmitting
+                ? t.report.authSubmitting
+                : authMode === "register"
+                  ? t.report.registerSubmit
+                  : t.report.loginSubmit}
             </button>
             {authMessage && (
               <p className="text-sm text-slate-600" role="status">
