@@ -77,6 +77,100 @@
       "place": "Lugar"
     }
   },
+  "report": {
+    "title": "Reportar un incidente",
+    "description": "Comparte información para que el equipo pueda revisarla antes de incorporarla al nivel de la zona.",
+    "zoneLabel": "Zona",
+    "typeLabel": "Tipo de incidente",
+    "severityLabel": "Severidad",
+    "descriptionLabel": "Descripción",
+    "locationLabel": "Ubicación del incidente",
+    "locationButton": "Usar mi ubicación actual",
+    "locationLoading": "Obteniendo ubicación…",
+    "locationReady": "Ubicación lista para enviar.",
+    "locationError": "Necesitamos una ubicación cercana a la zona seleccionada.",
+    "submit": "Enviar reporte",
+    "submitting": "Enviando…",
+    "success": "Reporte enviado para revisión. Su estado es pendiente.",
+    "submitError": "No pudimos enviar el reporte. Verifica la zona, la ubicación y los datos ingresados.",
+    "types": {
+      "theft": "Hurto o robo",
+      "scam": "Estafa",
+      "harassment": "Acoso",
+      "other": "Otro"
+    },
+    "severities": {
+      "one": "1 — Leve",
+      "two": "2 — Moderada",
+      "three": "3 — Alta"
+    },
+    "authTitle": "Crea una cuenta para enviar el reporte",
+    "authDescription": "El mapa puede consultarse sin registro. Solo pedimos una cuenta al enviar información.",
+    "register": "Registrarme",
+    "login": "Ya tengo cuenta",
+    "fullName": "Nombre",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "registerSubmit": "Crear cuenta",
+    "loginSubmit": "Iniciar sesión",
+    "authError": "No pudimos completar la autenticación.",
+    "confirmEmail": "Revisa tu correo para confirmar la cuenta y luego inicia sesión."
+  },
+  "admin": {
+    "title": "Administración",
+    "loading": "Cargando panel administrativo…",
+    "loadError": "No pudimos cargar los datos administrativos.",
+    "actionError": "No pudimos completar esta acción.",
+    "loginTitle": "Acceso administrativo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "loginSubmit": "Iniciar sesión",
+    "loginError": "No pudimos iniciar la sesión.",
+    "accessDenied": "Esta cuenta no tiene acceso administrativo.",
+    "approve": "Aprobar",
+    "reject": "Rechazar",
+    "sections": {
+      "zones": "Zonas",
+      "places": "Lugares pendientes",
+      "incidents": "Reportes pendientes"
+    },
+    "riskLevels": {
+      "low": "Sin reportes recientes",
+      "medium": "Precaución",
+      "high": "Atención elevada",
+      "unknown": "Sin datos recientes"
+    },
+    "zones": {
+      "nameEs": "Nombre en español",
+      "nameEn": "Nombre en inglés",
+      "descriptionEs": "Descripción en español",
+      "descriptionEn": "Descripción en inglés",
+      "riskLevel": "Nivel de precaución",
+      "geometry": "Polígono GeoJSON",
+      "save": "Guardar cambios",
+      "saved": "Zona actualizada.",
+      "invalidGeometry": "El polígono debe ser un GeoJSON válido."
+    },
+    "places": {
+      "empty": "No hay lugares pendientes de moderación.",
+      "noCategory": "Sin categoría"
+    },
+    "incidents": {
+      "empty": "No hay reportes pendientes de moderación.",
+      "type": "Tipo",
+      "severity": "Severidad",
+      "internalPlace": "Lugar asociado para moderación interna"
+    },
+    "audit": {
+      "approved": "Aprobado",
+      "rejected": "Rechazado",
+      "edited": "Editado",
+      "by": "por",
+      "unknownActor": "Administrador",
+      "adminRole": "admin",
+      "empty": "Todavía no hay acciones registradas para este elemento."
+    }
+  },
   "routes": {
     "map": {
       "title": "Mapa",

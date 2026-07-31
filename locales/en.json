@@ -77,6 +77,100 @@
       "place": "Place"
     }
   },
+  "report": {
+    "title": "Report an incident",
+    "description": "Share information for the team to review before it affects the area's level.",
+    "zoneLabel": "Area",
+    "typeLabel": "Incident type",
+    "severityLabel": "Severity",
+    "descriptionLabel": "Description",
+    "locationLabel": "Incident location",
+    "locationButton": "Use my current location",
+    "locationLoading": "Getting location…",
+    "locationReady": "Location is ready to submit.",
+    "locationError": "A location near the selected area is required.",
+    "submit": "Submit report",
+    "submitting": "Submitting…",
+    "success": "Report submitted for review. Its status is pending.",
+    "submitError": "The report could not be submitted. Check the area, location, and entered information.",
+    "types": {
+      "theft": "Theft or robbery",
+      "scam": "Scam",
+      "harassment": "Harassment",
+      "other": "Other"
+    },
+    "severities": {
+      "one": "1 — Low",
+      "two": "2 — Moderate",
+      "three": "3 — High"
+    },
+    "authTitle": "Create an account to submit the report",
+    "authDescription": "The map is available without registration. An account is only required when submitting information.",
+    "register": "Register",
+    "login": "I have an account",
+    "fullName": "Name",
+    "email": "Email",
+    "password": "Password",
+    "registerSubmit": "Create account",
+    "loginSubmit": "Sign in",
+    "authError": "Authentication could not be completed.",
+    "confirmEmail": "Check your email to confirm the account, then sign in."
+  },
+  "admin": {
+    "title": "Administration",
+    "loading": "Loading administration panel…",
+    "loadError": "Administration data could not be loaded.",
+    "actionError": "This action could not be completed.",
+    "loginTitle": "Administration access",
+    "email": "Email",
+    "password": "Password",
+    "loginSubmit": "Sign in",
+    "loginError": "Sign-in could not be completed.",
+    "accessDenied": "This account does not have administration access.",
+    "approve": "Approve",
+    "reject": "Reject",
+    "sections": {
+      "zones": "Areas",
+      "places": "Pending places",
+      "incidents": "Pending reports"
+    },
+    "riskLevels": {
+      "low": "No recent reports",
+      "medium": "Caution",
+      "high": "Elevated attention",
+      "unknown": "No recent data"
+    },
+    "zones": {
+      "nameEs": "Spanish name",
+      "nameEn": "English name",
+      "descriptionEs": "Spanish description",
+      "descriptionEn": "English description",
+      "riskLevel": "Precaution level",
+      "geometry": "GeoJSON polygon",
+      "save": "Save changes",
+      "saved": "Area updated.",
+      "invalidGeometry": "The polygon must be valid GeoJSON."
+    },
+    "places": {
+      "empty": "There are no places awaiting moderation.",
+      "noCategory": "No category"
+    },
+    "incidents": {
+      "empty": "There are no reports awaiting moderation.",
+      "type": "Type",
+      "severity": "Severity",
+      "internalPlace": "Associated place for internal moderation"
+    },
+    "audit": {
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "edited": "Edited",
+      "by": "by",
+      "unknownActor": "Administrator",
+      "adminRole": "admin",
+      "empty": "No actions have been recorded for this item yet."
+    }
+  },
   "routes": {
     "map": {
       "title": "Map",
